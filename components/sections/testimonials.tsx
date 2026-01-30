@@ -1,14 +1,14 @@
 "use client"
 
 import React, { useEffect, useState, useCallback, useRef } from "react"
-import { 
-  Star, 
-  Quote, 
-  ChevronLeft, 
-  ChevronRight, 
-  GraduationCap, 
-  BookOpen, 
-  Trophy, 
+import {
+  Star,
+  Quote,
+  ChevronLeft,
+  ChevronRight,
+  GraduationCap,
+  BookOpen,
+  Trophy,
   ShieldCheck,
   Users,
   Sparkles,
@@ -61,35 +61,35 @@ export default function TestimonialSection() {
 
   // Statistics data with targets
   const statsData = [
-    { 
-      label: "SSC Results", 
-      target: 100, 
-      suffix: "%", 
-      icon: <GraduationCap className="w-6 h-6" />, 
+    {
+      label: "SSC Results",
+      target: 100,
+      suffix: "%",
+      icon: <GraduationCap className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
       description: "Consistent Excellence"
     },
-    { 
-      label: "Legacy Years", 
-      target: 54, 
-      suffix: "+ Yrs", 
-      icon: <School className="w-6 h-6" />, 
+    {
+      label: "Legacy Years",
+      target: 54,
+      suffix: "+ Yrs",
+      icon: <School className="w-6 h-6" />,
       color: "from-purple-500 to-pink-500",
       description: "Since 1970"
     },
-    { 
-      label: "Student Clubs", 
-      target: 20, 
-      suffix: "+", 
-      icon: <Activity className="w-6 h-6" />, 
+    {
+      label: "Student Clubs",
+      target: 20,
+      suffix: "+",
+      icon: <Activity className="w-6 h-6" />,
       color: "from-emerald-500 to-teal-500",
       description: "Activities"
     },
-    { 
-      label: "Successful Alumni", 
-      target: 5000, 
-      suffix: "+", 
-      icon: <Users className="w-6 h-6" />, 
+    {
+      label: "Successful Alumni",
+      target: 5000,
+      suffix: "+",
+      icon: <Users className="w-6 h-6" />,
       color: "from-amber-500 to-orange-500",
       description: "Global Network"
     }
@@ -160,13 +160,13 @@ export default function TestimonialSection() {
           }
           return prev + 1
         })
-      }, 50) 
+      }, 50)
       return () => clearInterval(timer)
     }
   }, [isHovering, nextSlide])
 
   return (
-    <section className="py-24 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <section className="pt-24 bg-white dark:bg-slate-950 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating Particles */}
@@ -182,11 +182,11 @@ export default function TestimonialSection() {
             }}
           ></div>
         ))}
-        
+
         {/* Large Glow Orbs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-500/10 rounded-full blur-[150px] animate-pulse-slow"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10 rounded-full blur-[150px] animate-pulse-slow delay-1000"></div>
-        
+
         {/* Floating Icons */}
         <BookOpen className="absolute top-20 left-[10%] text-blue-200/20 w-12 h-12 animate-float-slow" />
         <Trophy className="absolute top-1/4 right-[15%] text-amber-200/20 w-16 h-16 animate-float-slow delay-500" />
@@ -195,9 +195,9 @@ export default function TestimonialSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header with Enhanced Animations */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -209,7 +209,7 @@ export default function TestimonialSection() {
             <span>A Legacy of Excellence</span>
             <Sparkles size={14} />
           </div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -221,7 +221,7 @@ export default function TestimonialSection() {
               <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 blur-md"></span>
             </span> in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-800 animate-gradient-x">Mulund</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -233,7 +233,7 @@ export default function TestimonialSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Enhanced Statistics Dashboard */}
           <div ref={numbersRef} className="lg:col-span-5">
             <div className="grid grid-cols-2 gap-4 md:gap-6">
@@ -244,7 +244,7 @@ export default function TestimonialSection() {
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     rotate: index % 2 === 0 ? 2 : -2,
                     transition: { duration: 0.3 }
@@ -253,7 +253,7 @@ export default function TestimonialSection() {
                 >
                   {/* Glow Effect */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                  
+
                   {/* Main Card */}
                   <div className="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500">
                     {/* Floating Icon */}
@@ -262,7 +262,7 @@ export default function TestimonialSection() {
                         {stat.icon}
                       </div>
                     </div>
-                    
+
                     {/* Animated Number */}
                     <div className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-1">
                       <span className="relative">
@@ -272,25 +272,25 @@ export default function TestimonialSection() {
                         {/* <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-30"></span> */}
                       </span>
                     </div>
-                    
+
                     {/* Label */}
                     <div className="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                       {stat.label}
                     </div>
-                    
+
                     {/* Description */}
                     <div className="text-xs text-slate-500 dark:text-slate-500 font-medium">
                       {stat.description}
                     </div>
-                    
+
                     {/* Progress Bar */}
                     <div className="mt-4 h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className={`h-full bg-gradient-to-r ${stat.color} transition-all duration-1000 ease-out`}
                         style={{ width: `${(animatedNumbers[index] / stat.target) * 100}%` }}
                       ></div>
                     </div>
-                    
+
                     {/* Floating Particles */}
                     <div className="absolute inset-0 overflow-hidden rounded-2xl">
                       {[...Array(3)].map((_, i) => (
@@ -309,36 +309,36 @@ export default function TestimonialSection() {
                 </motion.div>
               ))}
             </div>
-            
-     
+
+
           </div>
 
           {/* Enhanced Testimonial Card */}
-          <div 
+          <div
             className="lg:col-span-7 "
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-                   {/* Additional Mini Stats */}
-        <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.4 }}
-  viewport={{ once: true }}
-  className="my-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto px-2"
->
-  {[
-    { icon: <CheckCircle2 className="w-5 h-5" />, text: "100% Pass Rate", color: "emerald" },
-    { icon: <Trophy className="w-5 h-5" />, text: "Consistently Top Ranked", color: "blue" },
-    { icon: <Sparkles className="w-5 h-5" />, text: "State-of-the-Art Facilities", color: "amber" },
-  ].map((item, i) => (
-    <motion.div
-      key={i}
-      initial={{ opacity: 0, scale: 0.92 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: 0.1 * i + 0.3 }}
-      viewport={{ once: true }}
-      className={`
+            {/* Additional Mini Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="my-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto px-2"
+            >
+              {[
+                { icon: <CheckCircle2 className="w-5 h-5" />, text: "100% Pass Rate", color: "emerald" },
+                { icon: <Trophy className="w-5 h-5" />, text: "Consistently Top Ranked", color: "blue" },
+                { icon: <Sparkles className="w-5 h-5" />, text: "State-of-the-Art Facilities", color: "amber" },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1 * i + 0.3 }}
+                  viewport={{ once: true }}
+                  className={`
         group relative overflow-hidden rounded-2xl bg-gradient-to-b 
         from-slate-50/80 to-slate-100/40 dark:from-slate-900/60 dark:to-slate-950/40
         border border-slate-200/70 dark:border-slate-700/50
@@ -346,24 +346,24 @@ export default function TestimonialSection() {
         p-4 flex items-center gap-3 transition-all duration-300
         hover:-translate-y-1 hover:border-${item.color}-400/40
       `}
-    >
-      {/* subtle background glow */}
-      <div className={`absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 bg-gradient-to-br from-${item.color}-500/10 to-transparent`} />
+                >
+                  {/* subtle background glow */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 bg-gradient-to-br from-${item.color}-500/10 to-transparent`} />
 
-      <div className={`
+                  <div className={`
         flex-shrink-0 p-2.5 rounded-xl bg-gradient-to-br from-${item.color}-500/10 to-${item.color}-600/5
         text-${item.color}-500 dark:text-${item.color}-400
         group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300
       `}>
-        {item.icon}
-      </div>
+                    {item.icon}
+                  </div>
 
-      <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
-        {item.text}
-      </span>
-    </motion.div>
-  ))}
-</motion.div>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                    {item.text}
+                  </span>
+                </motion.div>
+              ))}
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -374,14 +374,14 @@ export default function TestimonialSection() {
             >
               {/* Floating Background Elements */}
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-blue-500/5 rounded-[4rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
+
               <div className="relative p-4 md:p-8 bg-white dark:bg-slate-900 rounded-[3.5rem] shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden">
                 {/* Giant Animated Quote Icon */}
                 <Quote className="absolute -top-4 -right-4 w-48 h-48 text-blue-500/5 rotate-12 animate-pulse-slow" />
-                
+
                 {/* Progress Bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100 dark:bg-slate-800 overflow-hidden rounded-t-[3.5rem]">
-                  <div 
+                  <div
                     className="h-full bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 transition-all duration-100 ease-linear"
                     style={{ width: `${progress}%` }}
                   ></div>
@@ -403,7 +403,7 @@ export default function TestimonialSection() {
                       ))}
                     </div>
                     <div className="flex gap-3">
-                      <motion.button 
+                      <motion.button
                         whileHover={{ scale: 1.1, rotate: -5 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={prevSlide}
@@ -411,7 +411,7 @@ export default function TestimonialSection() {
                       >
                         <ChevronLeft size={24} />
                       </motion.button>
-                      <motion.button 
+                      <motion.button
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={nextSlide}
@@ -446,7 +446,7 @@ export default function TestimonialSection() {
                       transition={{ duration: 0.5 }}
                       className="flex items-center gap-6 pt-2 border-t border-slate-100 dark:border-slate-800"
                     >
-                      <motion.div 
+                      <motion.div
                         whileHover={{ rotate: 5, scale: 1.1 }}
                         className={`w-16 h-16 rounded-3xl bg-gradient-to-br ${testimonials[activeIndex].avatarColor} flex items-center justify-center text-white text-xl font-black shadow-2xl transform rotate-3 relative`}
                       >
@@ -454,7 +454,7 @@ export default function TestimonialSection() {
                         <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-transparent"></div>
                         {testimonials[activeIndex].name.charAt(0)}
                       </motion.div>
-                      
+
                       <div className="flex-1">
                         <h4 className="text-xl font-bold text-slate-900 dark:text-white">
                           {testimonials[activeIndex].name}
@@ -462,7 +462,7 @@ export default function TestimonialSection() {
                         <p className="text-blue-600 dark:text-cyan-400 font-semibold text-base">
                           {testimonials[activeIndex].role}
                         </p>
-                        <motion.div 
+                        <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="mt-1 inline-flex items-center text-xs gap-2 px-4 py-1 rounded-xl bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 text-blue-700 dark:text-blue-300 font-bold"
                         >
@@ -498,7 +498,7 @@ export default function TestimonialSection() {
         </div>
 
         {/* Enhanced Call to Action */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -511,11 +511,11 @@ export default function TestimonialSection() {
               <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/20 blur-[100px] rounded-full animate-pulse-slow"></div>
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-600/20 blur-[100px] rounded-full animate-pulse-slow delay-500"></div>
             </div>
-            
+
             {/* Floating Icons */}
             <Heart className="absolute top-6 left-6 text-white/10 w-12 h-12 animate-float-slow" />
             <Target className="absolute bottom-6 right-6 text-white/10 w-12 h-12 animate-float-slow delay-300" />
-             
+
             <div className="relative z-10">
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 Be Part of the <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">Pius Legacy</span>
@@ -524,7 +524,7 @@ export default function TestimonialSection() {
                 Join thousands of successful alumni who started their journey here. Shape your future with excellence.
               </p>
             </div>
-             
+
             <div className="relative z-10">
               <motion.button
                 whileHover={{ scale: 1.05, rotate: 1 }}

@@ -66,16 +66,16 @@ export default function ContactSection() {
   ]
 
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       ref={sectionRef}
-      className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden"
+      className="relative py-24 bg-white overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        
+
         {/* Floating Particles */}
         {[...Array(20)].map((_, i) => (
           <div
@@ -136,7 +136,7 @@ export default function ContactSection() {
                 >
                   {/* Glow Effect */}
                   <div className={`absolute -inset-2 bg-gradient-to-r ${info.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                  
+
                   <div className="relative p-6 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-500">
                     <div className="flex items-start gap-4">
                       <div className={`p-3 rounded-xl ${info.gradient} text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
@@ -148,7 +148,7 @@ export default function ContactSection() {
                         <p className="text-sm text-gray-500">{info.description}</p>
                       </div>
                     </div>
-                    
+
                     {/* Hover Indicator */}
                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -167,7 +167,7 @@ export default function ContactSection() {
               className="relative group"
             >
               <div className="absolute -inset-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              
+
               {/* <div className="relative p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
@@ -210,7 +210,7 @@ export default function ContactSection() {
           >
             {/* Form Glow Effect */}
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-500/10 rounded-3xl blur-2xl"></div>
-            
+
             <div className="relative bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
               {/* Form Header */}
               <div className="bg-gradient-to-r from-blue-600 to-cyan-500 p-8 text-white">
@@ -363,13 +363,13 @@ export default function ContactSection() {
                       >
                         {/* Button Background Animation */}
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                        
+
                         {/* Button Content */}
                         <span className="relative z-10 text-lg">
                           {submitted ? "Message Sent!" : "Send Message"}
                         </span>
                         <Send className={`w-5 h-5 relative z-10 transform transition-transform duration-300 ${isHovered ? "translate-x-1" : ""}`} />
-                        
+
                         {/* Button Shine Effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                       </motion.button>
@@ -402,7 +402,7 @@ export default function ContactSection() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Visit Our Campus</h3>
               <p className="text-gray-600 mb-6">
-                Experience our state-of-the-art facilities firsthand. Schedule a campus tour to see our classrooms, labs, 
+                Experience our state-of-the-art facilities firsthand. Schedule a campus tour to see our classrooms, labs,
                 sports facilities, and meet our dedicated faculty.
               </p>
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105">

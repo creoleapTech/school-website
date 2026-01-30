@@ -23,7 +23,7 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       id="home"
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden pt-5"
     >
       {/* Parallax Background */}
       <div
@@ -56,10 +56,14 @@ export default function HeroSection() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
           <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover-lift shadow-lg">
-            Apply for Admission
+            <a href="/#contact">
+              Apply for Admission
+            </a>
           </button>
           <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors">
-            Learn More
+            <a href="/about">
+              Learn More
+            </a>
           </button>
         </div>
       </div>
@@ -69,19 +73,19 @@ export default function HeroSection() {
         <ChevronDown className="text-white" size={32} />
       </div>
 
-        <div className="absolute rotate-180 bottom-0 left-0 w-full overflow-hidden leading-none ">
-          <svg 
-            className="relative block  w-full h-24 lg:h-40" 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 1200 120" 
-            preserveAspectRatio="none"
-          >
-            <path 
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-              className="fill-white"
-            ></path>
-          </svg>
-        </div>
+      <div className="absolute rotate-180 bottom-0 left-0 w-full overflow-hidden leading-none ">
+        <svg
+          className="relative block  w-full h-24 lg:h-40"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="fill-white"
+          ></path>
+        </svg>
+      </div>
     </section>
   )
 }

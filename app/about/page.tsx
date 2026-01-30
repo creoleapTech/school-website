@@ -1,11 +1,11 @@
 "use client"
 
-import AboutPage from "@/components/sections/about";
+import AboutPage from "@/components/about/aboutPage";
 
 export default function About() {
-    return(
-<>
-<About />
-</>
+    return (
+        <>  
+            <AboutPage />
+        </>
     )
 }

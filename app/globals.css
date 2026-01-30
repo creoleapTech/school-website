@@ -213,3 +213,7 @@
     transform: scale(1.05);
   }
 }
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 80px !important; /* Accounts for fixed navbar */
+}

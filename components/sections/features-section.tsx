@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react'
 import { ScrollObserver } from "@/components/ui/scroll-observer"
-import { 
-  Laptop, 
-  Trophy, 
-  Palette, 
-  Compass, 
-  Zap, 
+import {
+  Laptop,
+  Trophy,
+  Palette,
+  Compass,
+  Zap,
   ArrowUpRight,
   ShieldCheck,
   BookMarked
@@ -54,7 +54,7 @@ export default function FeaturesSection() {
   return (
     <section id="features" className=" bg-white dark:bg-slate-950 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <ScrollObserver className="mb-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -64,38 +64,38 @@ export default function FeaturesSection() {
                 Our Pillars of Excellence
               </div>
               <h2 className="font-serif text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-                Nurturing Minds, <br/>
+                Nurturing Minds, <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
                   Enlightening Souls.
                 </span>
               </h2>
             </div>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-sm border-l-2 border-blue-600 pl-6">
-             " THOU SHALT LOVE THE LORD THY GOD WITH THY WHOLE HEART AND WITH THY
+              " THOU SHALT LOVE THE LORD THY GOD WITH THY WHOLE HEART AND WITH THY
 
-WHOLE SOUL AND WITH THY WHOLE MIND : AND THOU SHALT LOVE THY
+              WHOLE SOUL AND WITH THY WHOLE MIND : AND THOU SHALT LOVE THY
 
-NEIGHBOURS AS THYSELF. "</p>
+              NEIGHBOURS AS THYSELF. "</p>
           </div>
         </ScrollObserver>
 
         {/* Interactive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-6">
           {features.map((feature, index) => (
-            <ScrollObserver 
-              key={index} 
+            <ScrollObserver
+              key={index}
               className={`relative md:col-span-6 lg:col-span-${index === 0 || index === 3 ? '7' : '5'} group`}
             >
-              <div 
+              <div
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 className="relative h-[450px] overflow-hidden rounded-[2.5rem] bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 shadow-xl"
               >
                 {/* Background Image with Parallax & Darken */}
                 <div className="absolute inset-0">
-                  <img 
-                    src={feature.image} 
-                    alt={feature.title} 
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
                     className={`w-full h-full object-cover transition-transform duration-1000 ${hoveredIndex === index ? 'scale-110' : 'scale-100'}`}
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent transition-opacity duration-500 ${hoveredIndex === index ? 'opacity-90' : 'opacity-70'}`} />
@@ -106,15 +106,15 @@ NEIGHBOURS AS THYSELF. "</p>
                   <div className={`mb-4 w-12 h-12 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white shadow-lg transform transition-transform duration-500 ${hoveredIndex === index ? 'rotate-12 scale-110' : ''}`}>
                     {feature.icon}
                   </div>
-                  
+
                   <span className="text-cyan-400 font-bold text-xs uppercase tracking-[0.2em] mb-2 block">
                     {feature.tag}
                   </span>
-                  
+
                   <h3 className="font-serif text-3xl font-bold text-white mb-4">
                     {feature.title}
                   </h3>
-                  
+
                   <div className={`grid transition-all duration-500 ease-in-out ${hoveredIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                     <p className="overflow-hidden text-slate-300 text-lg leading-relaxed">
                       {feature.description}
@@ -133,7 +133,7 @@ NEIGHBOURS AS THYSELF. "</p>
 
                 {/* Corner Decorative Element */}
                 <div className={`absolute top-0 right-0 p-8 transition-opacity duration-500 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`}>
-                   <ShieldCheck className="text-white/20 w-12 h-12" />
+                  <ShieldCheck className="text-white/20 w-12 h-12" />
                 </div>
               </div>
             </ScrollObserver>
@@ -141,7 +141,7 @@ NEIGHBOURS AS THYSELF. "</p>
         </div>
 
         {/* Bottom Quick Facts */}
-        <ScrollObserver className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 p-10 bg-blue-600 rounded-[2rem] text-white">
+        <ScrollObserver className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 p-10 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 rounded-[3rem] p-10 md:p-14 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl  text-white">
           {[
             { label: "SSC Board", sub: "100% Results", icon: <BookMarked /> },
             { label: "Founded", sub: "Since 1970", icon: <Zap /> },

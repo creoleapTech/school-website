@@ -39,12 +39,12 @@ export default function AdmissionSection() {
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <ScrollObserver className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
             <Sparkles size={14} />
-       Empowering Our Students
+            Empowering Our Students
           </div>
           <h2 className="font-serif text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
             Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">St. Pius X?</span>
@@ -66,11 +66,11 @@ export default function AdmissionSection() {
               >
                 {/* Hover Gradient Glow */}
                 <div className={`absolute -inset-1 bg-gradient-to-br ${reason.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                
+
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${reason.gradient} flex items-center justify-center text-white mb-8 shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                   <Icon size={28} />
                 </div>
-                
+
                 <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {reason.title}
                 </h3>
@@ -100,10 +100,7 @@ export default function AdmissionSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
               <button className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
-                Apply Now
-              </button>
-              <button className="px-10 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-                Download Prospectus
+                <a href="/#form">Apply Now</a>
               </button>
             </div>
           </div>

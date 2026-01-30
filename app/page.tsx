@@ -15,7 +15,6 @@ import Testimonials from "@/components/sections/testimonials"
 export default function Home() {
   return (
     <main className="w-full overflow-x-hidden">
-      <Navigation />
       <Suspense fallback={<div className="h-screen bg-background" />}>
         <HeroSection />
       </Suspense>
@@ -25,8 +24,10 @@ export default function Home() {
       <Testimonials />
       {/* <GallerySection /> */}
       {/* <CarouselSection /> */}
-      <ContactSection />
-      <Footer />
+      <div id="form">
+        <ContactSection />
+      </div>
+
     </main>
   )
 }

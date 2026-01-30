@@ -1,80 +1,107 @@
 "use client"
 
-import { Facebook, Twitter, Instagram, Linkedin, Heart } from "lucide-react"
+import { useState } from "react"
+import { Facebook, Twitter, Instagram, Linkedin, Heart, ArrowUp, Mail } from "lucide-react"
+import Link from "next/link"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const [email, setEmail] = useState("")
 
-  const footerLinks = {
-    About: [
-      { label: "About Us", href: "#" },
-      { label: "Mission & Vision", href: "#" },
-      { label: "Leadership", href: "#" },
-      { label: "Achievements", href: "#" },
-    ],
-    Academics: [
-      { label: "Curriculum", href: "#" },
-      { label: "Faculty", href: "#" },
-      { label: "Programs", href: "#" },
-      { label: "Admissions", href: "#" },
-    ],
-    Resources: [
-      { label: "Student Portal", href: "#" },
-      { label: "Parent Portal", href: "#" },
-      { label: "Downloads", href: "#" },
-      { label: "Events Calendar", href: "#" },
-    ],
-    Legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms & Conditions", href: "#" },
-      { label: "Code of Conduct", href: "#" },
-      { label: "Contact Us", href: "#" },
-    ],
-  }
+  const footerColumns = [
+    {
+      title: "About School",
+      links: [
+        { label: "Overview", href: "/about#overview" },
+        { label: "Vision & Mission", href: "/about#vision-mission" },
+        { label: "Principal's Message", href: "/about#principal-message" },
+        { label: "Leadership", href: "/about#leadership" },
+        { label: "Facilities & Campus", href: "/about#facilities" },
+      ],
+    },
+    {
+      title: "Quick Links",
+      links: [
+        { label: "Gallery", href: "/gallery" },
+        { label: "Events & Calendar", href: "/events" },
+        { label: "Contact Us", href: "/contact" },
+        { label: "Parent Portal", href: "/parent-portal" },
+        { label: "Student Portal", href: "/student-portal" },
+      ],
+    },
+  ]
 
-  const socialLinks = [
-    { icon: Facebook, url: "#", label: "Facebook" },
-    { icon: Twitter, url: "#", label: "Twitter" },
-    { icon: Instagram, url: "#", label: "Instagram" },
-    { icon: Linkedin, url: "#", label: "LinkedIn" },
+  const socials = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
   ]
 
   return (
-    <footer className="bg-primary text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 py-16">
-          {/* Brand Section */}
-          <div className="lg:col-span-1">
-            <h3 className="text-2xl font-playfair font-bold mb-4">St Pius School</h3>
-            <p className="text-white/80 mb-6">Excellence in Education, Character Building, and Holistic Development</p>
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon
-                return (
-                  <a
-                    key={index}
-                    href={social.url}
-                    aria-label={social.label}
-                    className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors"
-                  >
-                    <Icon size={20} />
-                  </a>
-                )
-              })}
+    <footer className="relative  bg-gradient-to-r from-yellow-100 to-blue-100  text-gray-300 overflow-hidden">
+      {/* Subtle top wave for smooth transition */}
+      <div className="absolute top-0 left-0 right-0 -translate-y-1 pointer-events-none">
+        <svg
+          viewBox="0 0 1440 120"
+          className="w-full h-24 fill-white rotate-180 translate-y-1"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,64L80,80C160,96,320,128,480,117.3C640,107,800,53,960,48C1120,43,1280,85,1360,106.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" />
+        </svg>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+          {/* Brand + Socials */}
+          <div className="lg:col-span-2 space-y-8">
+            <div>
+              <Link href="/" className="flex items-center gap-4">
+                <img
+                  src="/st_pius/LOGO-St-pius.png"
+                  alt="St. Pius X Logo"
+                  className="h-16 w-auto"
+                />
+                <span className="text-3xl font-bold text-indigo-950 tracking-tight">St. Pius X High School</span>
+              </Link>
+              <p className="mt-5 text-gray-700 leading-relaxed text-lg">
+                Excellence in Education • Character Building • Holistic Development since 1975
+              </p>
+            </div>
+
+            <div className="space-y-5">
+              <h4 className="text-xl font-semibold text-indigo-900">Stay Connected</h4>
+              <div className="flex gap-5">
+                {socials.map((social, i) => {
+                  const Icon = social.icon
+                  return (
+                    <a
+                      key={i}
+                      href={social.href}
+                      aria-label={social.label}
+                      className="p-3.5 bg-white/80 rounded-full shadow-sm hover:shadow-md hover:bg-indigo-100 hover:text-indigo-700 transition-all duration-300 text-gray-700"
+                    >
+                      <Icon size={22} />
+                    </a>
+                  )
+                })}
+              </div>
             </div>
           </div>
 
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="font-semibold mb-4 text-white">{category}</h4>
-              <ul className="space-y-2">
-                {links.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="text-white/70 hover:text-white transition-colors text-sm">
+          {/* Link Columns */}
+          {footerColumns.map((column) => (
+            <div key={column.title} className="space-y-6">
+              <h4 className="text-xl font-semibold text-indigo-900">{column.title}</h4>
+              <ul className="space-y-4 text-base">
+                {column.links.map((link, i) => (
+                  <li key={i}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-700 hover:text-indigo-700 transition-colors hover:translate-x-1.5 inline-block duration-200"
+                    >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -82,27 +109,23 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/10" />
+        {/* Bottom Bar */}
+        <div className="py-10 border-t border-gray-200/80 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
 
-        {/* Bottom Footer */}
-        <div className="py-8 flex flex-col md:flex-row justify-between items-center text-white/80 text-sm">
-          <p className="flex items-center gap-2 mb-4 md:mb-0">
-            Made with <Heart size={16} className="text-accent" /> for quality education
+          <p>© {currentYear} <span className="text-black"> St. Pius X High School, Mulund.</span> All rights reserved.</p>
+          <p className=" flex items-center gap-2 mb-4 md:mb-0">
+            Powered by
+            <a className="underline text-black" href="https://creoleap.com">Creoleap Technologies Private Limited</a>
           </p>
-          <p>&copy; {currentYear} St Pius School Mulund. All rights reserved.</p>
         </div>
       </div>
-
-      {/* Back to Top Button */}
+      {/* Refined Back to Top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 bg-accent text-primary p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow z-40 hidden md:flex items-center justify-center"
+        className="fixed bottom-8 right-8 bg-gradient-to-r from-sky-600 to-cyan-500 text-white p-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group"
         aria-label="Back to top"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
+        <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />
       </button>
     </footer>
   )
