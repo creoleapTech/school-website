@@ -33,28 +33,44 @@ export default function TestimonialSection() {
 
   const testimonials = [
     {
-      name: "Savio D'Souza",
-      role: "Alumni (Batch of 2005)",
-      school: "Ex-Head Boy",
-      content: "St. Pius X isn't just a school; it's where my character was forged. The Jesuit values of discipline and service to others have been my north star in my professional career.",
+      name: "Ruchit Chandan",
+      role: "Alumni",
+      school: "Ex-Student",
+      content: "Best school in Mulund. Faculties are very professional. Environment is very peaceful. I am very happy that I got chance to study in St. Pius X High School.",
       rating: 5,
-      avatarColor: "from-blue-600 to-indigo-600",
+      avatarColor: "from-blue-500 to-indigo-500",
     },
     {
-      name: "Mrs. Anjali Iyer",
+      name: "Sushant Wadekar",
+      role: "Alumni",
+      school: "Ex-Student",
+      content: "One of the best schools of Mulund. Good facilities, teaching staff and everything else. The main attraction here is the school ground which is under the Church authority. Loved this place and feeling great that I got a chance to study here.",
+      rating: 5,
+      avatarColor: "from-teal-500 to-emerald-500",
+    },
+    {
+      name: "Ashutosh Tiwari",
+      role: "Alumni",
+      school: "Ex-Student",
+      content: "I studied here. When I joined this school, I was an introvert, had no idea about how talented I was and couldn't speak English and was only good in mathematics. When I left the school, I was a good basketball, chess and football player, an extrovert, good in all subject and most importantly very ambitious person. This school provides too many facilities with very less fee.",
+      rating: 5,
+      avatarColor: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "Angad Mistry",
+      role: "Alumni",
+      school: "Ex-Student",
+      content: "I made a lot and lots of memories here, Mind blowing experiences, all packed in my backpack named \"GOLDEN DAYS\" really enjoyed studying, playing, etc. really emotional writing this review, in those days I said, \"I want to leave this school life.\", but I take my words back. I am really disappointed by google, can't they add 10-star option for this school",
+      rating: 5,
+      avatarColor: "from-amber-500 to-orange-500",
+    },
+    {
+      name: "Ron Menezes",
       role: "Parent",
-      school: "Grade 10 Parent",
-      content: "The dedication of the teachers here is unmatched. Even with the pressure of SSC boards, the school ensures our children participate in RSP and Sports, keeping them well-rounded.",
+      school: "Parent of Alumnus",
+      content: "My son studied at this school. Being a government aided school. The school is at par with best of school in Mumbai. The principal & teaching & non-teaching staff are very good",
       rating: 5,
-      avatarColor: "from-cyan-500 to-blue-500",
-    },
-    {
-      name: "Vikram Malhotra",
-      role: "Alumni & Professional",
-      school: "Entrepreneur",
-      content: "From the football grounds of Mulund to the top-tier science labs, Pius provided the perfect environment to explore my potential. 100% recommended for holistic growth.",
-      rating: 5,
-      avatarColor: "from-blue-700 to-cyan-400",
+      avatarColor: "from-indigo-500 to-purple-500",
     }
   ]
 
