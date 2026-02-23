@@ -48,7 +48,7 @@ export default function Navigation() {
                   {item.hasSubmenu ? (
                     <>
                       <button
-                        className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors flex items-center gap-1"
+                        className="px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors flex items-center gap-1"
                         onMouseEnter={() => setAboutDropdownOpen(true)}
                         onMouseLeave={() => setAboutDropdownOpen(false)}
                       >
@@ -67,7 +67,7 @@ export default function Navigation() {
                           <Link
                             key={subItem.label}
                             to={subItem.href as any}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            className="block px-4 py-2 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                           >
                             {subItem.label}
                           </Link>
@@ -80,7 +80,7 @@ export default function Navigation() {
                       {...(item.isExternal
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors"
+                      className="px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -92,9 +92,9 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold">
+            <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold text-base">
               <Link to="/contact">
-                Apply Now
+                Admissions Open for 2026-2027
               </Link>
             </button>
           </div>
@@ -133,7 +133,7 @@ export default function Navigation() {
                             <Link
                               key={subItem.label}
                               to={subItem.href as any}
-                              className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5"
+                              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-primary/5"
                               onClick={() => setIsOpen(false)}
                             >
                               {subItem.label}
@@ -155,8 +155,8 @@ export default function Navigation() {
               ))}
 
               {/* Mobile CTA */}
-              <button className="w-full mt-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold">
-                Apply Now
+              <button className="w-full mt-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold text-base">
+                Admissions Open for 2026-2027
               </button>
             </div>
           </div>

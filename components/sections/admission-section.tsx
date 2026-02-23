@@ -32,7 +32,7 @@ export default function AdmissionSection() {
   ]
 
   return (
-    <section id="admission" className="relative py-24 overflow-hidden bg-white dark:bg-slate-950">
+    <section id="admission" className="relative pt-4 pb-24 overflow-hidden bg-white dark:bg-slate-950">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px]"></div>

@@ -357,25 +357,59 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="mt-20 bg-gradient-to-r from-gray-50 to-white rounded-3xl p-8 border border-gray-100 shadow-lg"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Visit Our Campus</h3>
-              <p className="text-gray-600 mb-6">
-                Experience our state-of-the-art facilities firsthand. Schedule a campus tour to see our classrooms, labs,
-                sports facilities, and meet our dedicated faculty.
-              </p>
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105">
-                <MapPin size={18} />
-                Schedule Campus Tour
-                <ArrowRight className="w-4 h-4" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Visit Our Campus</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Experience our state-of-the-art facilities firsthand. Our campus is designed to foster creativity, innovation, and holistic development for all students.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-blue-50 text-blue-600 rounded-xl mt-1">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Location</h4>
+                    <p className="text-gray-600">
+                      St Pius Rd, opp. St Pius Colony,<br />
+                      Mulund West, Mumbai, Maharashtra 400080
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl mt-1">
+                    <Clock size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Visiting Hours</h4>
+                    <p className="text-gray-600">
+                      Monday to Friday: 9:00 AM - 3:00 PM<br />
+                      Saturday: 9:00 AM - 12:00 PM (By appointment)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all hover:-translate-y-1 group">
+                <MapPin size={20} />
+                Schedule a Campus Tour
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-            <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-3xl p-4 border border-blue-100 shadow-inner h-[400px]">
-              <div className="w-full h-full overflow-hidden rounded-2xl">
-                <MapComponent
-                  position={[19.1666893, 72.9472618]}
-                  googleMapsUrl="https://www.google.com/maps/place/St.+Pius+X+High+School,+Mulund/@19.1666893,72.9472618,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b8f5e593f299:0xc96059fd45df2518!8m2!3d19.1666893!4d72.9472618!16s%2Fm%2F010fb5x7!17m2!4m1!1e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxNy4wIKXMDSoASAFQAw%3D%3D"
-                />
+
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-[2.5rem] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="bg-white rounded-[2rem] p-3 md:p-5 border border-gray-100 shadow-2xl relative z-10">
+                <div className="w-full h-[400px] md:h-[500px] overflow-hidden rounded-2xl relative border border-gray-100">
+                  <MapComponent
+                    position={[19.1666893, 72.9472618]}
+                    googleMapsUrl="https://www.google.com/maps/place/St.+Pius+X+High+School,+Mulund/@19.1666893,72.9472618,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b8f5e593f299:0xc96059fd45df2518!8m2!3d19.1666893!4d72.9472618!16s%2Fm%2F010fb5x7!17m2!4m1!1e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxNy4wIKXMDSoASAFQAw%3D%3D"
+                  />
+                </div>
               </div>
             </div>
           </div>
