@@ -121,7 +121,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information Cards */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 flex flex-col gap-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon
               return (
@@ -132,14 +132,14 @@ export default function ContactSection() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className="group relative"
+                  className="group relative flex-1 flex flex-col"
                 >
                   {/* Glow Effect */}
                   <div className={`absolute -inset-2 bg-gradient-to-r ${info.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
 
-                  <div className="relative p-6 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-500">
+                  <div className="relative p-6 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-500 flex-1 flex flex-col justify-center">
                     <div className="flex items-start gap-4">
-                      <div className={`p-3 rounded-xl ${info.gradient} text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`p-3 rounded-xl ${info.gradient} text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         <Icon size={24} />
                       </div>
                       <div className="flex-1">
@@ -157,47 +157,6 @@ export default function ContactSection() {
                 </motion.div>
               )
             })}
-
-            {/* Working Hours Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="absolute -inset-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-
-              {/* <div className="relative p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl shadow-xl">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
-                    <Clock className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">Office Hours</h3>
-                    <p className="text-gray-300 text-sm">Visit or contact us during these times</p>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  {workingHours.map((hour, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xl">{hour.icon}</span>
-                        <span className="font-medium">{hour.day}</span>
-                      </div>
-                      <span className="font-semibold text-amber-300">{hour.time}</span>
-                    </div>
-                  ))}
-                </div>
-              
-                <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
-                  <p className="text-sm text-gray-300">
-                    <span className="font-bold text-amber-300">Note:</span> For urgent admissions inquiries, call during office hours for immediate assistance.
-                  </p>
-                </div>
-              </div> */}
-            </motion.div>
           </div>
 
           {/* Contact Form */}
@@ -206,12 +165,12 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 relative"
+            className="lg:col-span-2 relative h-full"
           >
             {/* Form Glow Effect */}
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-500/10 rounded-3xl blur-2xl"></div>
 
-            <div className="relative bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+            <div className="relative bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden h-full flex flex-col">
               {/* Form Header */}
               <div className="bg-gradient-to-r from-blue-600 to-cyan-500 p-8 text-white">
                 <div className="flex items-center gap-4">
