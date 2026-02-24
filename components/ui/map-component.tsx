@@ -3,8 +3,11 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
 // Fix for default marker icon in Leaflet
+// @ts-ignore
 import markerIcon from 'leaflet/dist/images/marker-icon.png'
+// @ts-ignore
 import markerIconRetina from 'leaflet/dist/images/marker-icon-2x.png'
+// @ts-ignore
 import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 
 const DefaultIcon = L.icon({
