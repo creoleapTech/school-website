@@ -555,7 +555,7 @@ export default function TestimonialSection() {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float-particle {
           0%, 100% { transform: translate(0, 0); }
           33% { transform: translate(30px, -50px); }
