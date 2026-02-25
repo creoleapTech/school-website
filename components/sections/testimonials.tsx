@@ -229,7 +229,7 @@ export default function TestimonialSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6"
           >
             Trusted by <span className="relative">
               <span className="relative z-10">Generations</span>
@@ -279,7 +279,7 @@ export default function TestimonialSection() {
                     </div>
 
                     {/* Animated Number */}
-                    <div className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-1">
+                    <div className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-1">
                       <span className="relative">
                         {animatedNumbers[index]}
                         <span className="text-lg font-bold ml-1">{stat.suffix}</span>
@@ -390,7 +390,7 @@ export default function TestimonialSection() {
               {/* Floating Background Elements */}
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-blue-500/5 rounded-[4rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-              <div className="relative p-4 md:p-8 bg-white dark:bg-slate-900 rounded-[3.5rem] shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden">
+              <div className="relative p-4 sm:p-6 md:p-8 bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[3.5rem] shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden">
                 {/* Giant Animated Quote Icon */}
                 <Quote className="absolute -top-4 -right-4 w-48 h-48 text-blue-500/5 rotate-12 animate-pulse-slow" />
 
@@ -422,7 +422,7 @@ export default function TestimonialSection() {
                         whileHover={{ scale: 1.1, rotate: -5 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={prevSlide}
-                        className="w-14 h-14 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-gradient-to-r from-blue-600 to-cyan-500 hover:text-white hover:border-transparent transition-all shadow-lg"
+                        className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-gradient-to-r from-blue-600 to-cyan-500 hover:text-white hover:border-transparent transition-all shadow-lg"
                       >
                         <ChevronLeft size={24} />
                       </motion.button>
@@ -430,7 +430,7 @@ export default function TestimonialSection() {
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={nextSlide}
-                        className="w-14 h-14 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-gradient-to-r from-cyan-500 to-blue-600 hover:text-white hover:border-transparent transition-all shadow-lg"
+                        className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-gradient-to-r from-cyan-500 to-blue-600 hover:text-white hover:border-transparent transition-all shadow-lg"
                       >
                         <ChevronRight size={24} />
                       </motion.button>
@@ -520,7 +520,7 @@ export default function TestimonialSection() {
           viewport={{ once: true }}
           className="mt-24"
         >
-          <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 rounded-[3rem] p-10 md:p-14 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+          <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 rounded-2xl sm:rounded-[3rem] p-5 sm:p-8 md:p-14 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/20 blur-[100px] rounded-full animate-pulse-slow"></div>

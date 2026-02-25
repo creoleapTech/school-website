@@ -55,13 +55,13 @@ export default function Footer() {
           {/* Brand + Socials */}
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <Link to="/" className="flex items-center gap-4">
+              <Link to="/" className="flex items-center gap-3 sm:gap-4 flex-wrap">
                 <img
                   src="/st_pius/LOGO-St-pius.png"
                   alt="St. Pius X Logo"
                   className="h-16 w-auto"
                 />
-                <span className="text-3xl font-bold text-indigo-950 tracking-tight">St. Pius X High School</span>
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 tracking-tight">St. Pius X High School</span>
               </Link>
               <p className="mt-5 text-gray-700 leading-relaxed text-lg">
                 Excellence in Education • Character Building • Holistic Development since 1975
@@ -109,10 +109,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-10 border-t border-gray-200/80 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+        <div className="py-10 border-t border-gray-200/80 flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-gray-600">
 
           <p>© {currentYear} <span className="text-black"> St. Pius X High School, Mulund.</span> All rights reserved.</p>
-          <p className=" flex items-center gap-2 mb-4 md:mb-0">
+          <p className="flex items-center gap-2 mb-2 md:mb-0 text-center">
             Powered by
             <a className="underline text-black" href="https://creoleap.com">Creoleap Technologies Private Limited</a>
           </p>
@@ -121,7 +121,7 @@ export default function Footer() {
       {/* Refined Back to Top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 bg-gradient-to-r from-sky-600 to-cyan-500 text-white p-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group"
+        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 bg-gradient-to-r from-sky-600 to-cyan-500 text-white p-3 sm:p-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group"
         aria-label="Back to top"
       >
         <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />

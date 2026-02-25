@@ -227,8 +227,8 @@ const AboutPage: React.FC = () => {
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+        <div className="absolute top-0 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] bg-cyan-500/5 rounded-full blur-[120px] animate-pulse delay-1000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -238,7 +238,7 @@ const AboutPage: React.FC = () => {
             <SchoolIcon className="w-4 h-4" />
             Established 1970
           </div>
-          <h1 className="text-5xl  md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
             Welcome to<br />
             <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400">
               St. Pius X High School
@@ -254,7 +254,7 @@ const AboutPage: React.FC = () => {
           {/* VISION & MISSION - ENHANCED ANIMATIONS */}
           <div id="vision-mission" className="relative mt-20">
             {/* Animated Glow Background */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full hidden md:block animate-pulse-slow"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-64 md:h-64 bg-blue-500/10 blur-[100px] rounded-full hidden md:block animate-pulse-slow"></div>
 
             {/* Floating Particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -285,7 +285,7 @@ const AboutPage: React.FC = () => {
                 {/* Hover Shine Effect */}
                 {/* <div className="absolute -top-10 left-1/3 w-48 h-32 bg-gradient-to-r from-transparent via-white/20 to-transparent -rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 animate-shine"></div> */}
 
-                <div className="relative h-full overflow-hidden rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl p-8 md:p-12 shadow-2xl transition-all duration-700 group-hover:-translate-y-2 ">
+                <div className="relative h-full overflow-hidden rounded-2xl sm:rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl p-5 sm:p-8 md:p-12 shadow-2xl transition-all duration-700 group-hover:-translate-y-2 ">
                   {/* Animated Gradient Border */}
                   <div className="absolute inset-0 rounded-[2.5rem] border-2 border-transparent group-hover:border-blue-500/30 transition-all duration-500"></div>
 
@@ -345,7 +345,7 @@ const AboutPage: React.FC = () => {
                 {/* Hover Shine Effect */}
                 {/* <div className="absolute -bottom-10 right-1/3 w-48 h-32 bg-gradient-to-r from-transparent via-white/20 to-transparent -rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 animate-shine-delayed"></div> */}
 
-                <div className="relative h-full overflow-hidden rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl p-8 md:p-12 shadow-2xl transition-all duration-700 group-hover:-translate-y-2 ">
+                <div className="relative h-full overflow-hidden rounded-2xl sm:rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl p-5 sm:p-8 md:p-12 shadow-2xl transition-all duration-700 group-hover:-translate-y-2 ">
                   {/* Animated Gradient Border */}
                   <div className="absolute inset-0 rounded-[2.5rem] border-2 border-transparent group-hover:border-cyan-500/30 transition-all duration-500"></div>
 
@@ -438,7 +438,7 @@ const AboutPage: React.FC = () => {
                 <Heart className="w-4 h-4 text-blue-600 fill-blue-600" />
                 <span className="text-sm font-bold text-gray-700 uppercase tracking-wider">From Our Principal</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">
                 A Message of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-amber-600">Welcome</span>
               </h2>
             </motion.div>
@@ -455,7 +455,7 @@ const AboutPage: React.FC = () => {
               >
                 <div className="relative">
                   {/* Main Photo Card */}
-                  <div className="relative bg-white rounded-[2.5rem] p-6 shadow-2xl border border-gray-100 overflow-hidden group">
+                  <div className="relative bg-white rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-6 shadow-2xl border border-gray-100 overflow-hidden group">
                     {/* Decorative Corner Elements */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-[3rem]" />
                     <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-amber-500/10 to-transparent rounded-tr-[3rem]" />
@@ -497,13 +497,13 @@ const AboutPage: React.FC = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, type: "spring" }}
-                    className="absolute -bottom-6 -right-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl p-4 shadow-2xl border-4 border-white"
+                    className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-2xl border-2 sm:border-4 border-white"
                   >
-                    <div className="flex items-center gap-2">
-                      <Sparkles className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                       <div className="text-white">
-                        <div className="text-2xl font-black">25+</div>
-                        <div className="text-[10px] font-bold uppercase tracking-wider">Years Legacy</div>
+                        <div className="text-lg sm:text-2xl font-black">25+</div>
+                        <div className="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider">Years Legacy</div>
                       </div>
                     </div>
                   </motion.div>
@@ -518,7 +518,7 @@ const AboutPage: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="lg:col-span-8"
               >
-                <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
+                <div className="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
                   {/* Decorative Background Pattern */}
                   <div className="absolute top-0 right-0 w-64 h-64 opacity-5">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -687,14 +687,14 @@ const AboutPage: React.FC = () => {
           <div className="space-y-12">
             {facilities.map((facility, i) => (
               <div key={facility.id} className={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-white dark:bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800`}>
-                <div className="lg:w-1/2 h-80 lg:min-h-96 object-cover overflow-hidden">
+                <div className="lg:w-1/2 h-52 sm:h-64 md:h-80 lg:min-h-96 object-cover overflow-hidden">
                   <img src={facility.image} alt={facility.name} className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
                 </div>
-                <div className="lg:w-1/2 p-10 flex flex-col justify-center">
+                <div className="lg:w-1/2 p-5 sm:p-8 md:p-10 flex flex-col justify-center">
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-600 to-cyan-500' : 'from-cyan-500 to-blue-600'} text-white flex items-center justify-center mb-6 shadow-lg`}>
                     {facility.icon}
                   </div>
-                  <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">{facility.name}</h3>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">{facility.name}</h3>
                   <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-6">{facility.description}</p>
                   {/* <button className="text-blue-600 dark:text-cyan-400 font-bold flex items-center gap-2 hover:gap-4 transition-all">
                     Explore Space <ChevronDown className="-rotate-90 w-5 h-5" />
@@ -725,7 +725,7 @@ const AboutPage: React.FC = () => {
                 <Sparkles className="w-4 h-4 text-amber-600" />
                 <span className="text-sm font-bold text-gray-700 uppercase tracking-wider">Legacy & Excellence</span>
               </motion.div>
-              <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4">
                 Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-blue-600">Journey</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -807,12 +807,12 @@ const AboutPage: React.FC = () => {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: idx * 0.1 }}
-                          className="relative pl-20 group"
+                          className="relative pl-14 sm:pl-20 group"
                         >
                           {/* Timeline Node */}
                           <div className="absolute left-0 top-0 flex items-center gap-3">
-                            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                              <span className="text-2xl">{item.icon}</span>
+                            <div className={`w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                              <span className="text-base sm:text-2xl">{item.icon}</span>
                             </div>
                           </div>
 
@@ -926,7 +926,7 @@ const AboutPage: React.FC = () => {
                   className="bg-white rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all text-center group"
                 >
                   <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
-                  <div className="text-3xl font-black text-gray-900 mb-1">{stat.number}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-gray-900 mb-1">{stat.number}</div>
                   <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{stat.label}</div>
                 </motion.div>
               ))}

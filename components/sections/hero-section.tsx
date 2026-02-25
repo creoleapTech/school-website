@@ -59,7 +59,7 @@ export default function HeroSection() {
         <div className="scale-in">
 
           {/* ── Marathi School Name ── */}
-          <p className="text-xl md:text-2xl font-bold text-blue-100 mb-1 tracking-wide">
+          <p className="text-base sm:text-xl md:text-2xl font-bold text-blue-100 mb-1 tracking-wide">
             मुलुंड येथील सेंट पायस द टेन्थ हायस्कूल
           </p>
 
@@ -71,7 +71,7 @@ export default function HeroSection() {
           </div>
 
           {/* ── Main English Heading ── */}
-          <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-playfair font-bold mb-4 leading-tight">
             Excellence in{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-200">
               Education
@@ -79,7 +79,7 @@ export default function HeroSection() {
           </h1>
 
           {/* ── English Subheading ── */}
-          <p className="text-xl md:text-2xl mb-4 font-light max-w-2xl mx-auto text-gray-100">
+          <p className="text-base sm:text-xl md:text-2xl mb-4 font-light max-w-2xl mx-auto text-gray-100">
             Join St. Pius X School for world-class education, holistic development, and character building
           </p>
 
@@ -92,10 +92,10 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover-lift shadow-lg">
+          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover-lift shadow-lg text-sm sm:text-base">
             <a href="/#contact">Apply for Admission</a>
           </button>
-          <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors">
+          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors text-sm sm:text-base">
             <a href="/about">Learn More</a>
           </button>
         </div>

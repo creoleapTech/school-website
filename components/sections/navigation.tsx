@@ -32,11 +32,11 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm">
       <TopBar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src="/st_pius/LOGO-St-pius.png" className="h-20" alt="St. Pius X Logo" />
+              <img src="/st_pius/LOGO-St-pius.png" className="h-14 sm:h-20" alt="St. Pius X Logo" />
             </Link>
           </div>
 
@@ -92,7 +92,7 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold text-base">
+            <button className="px-4 lg:px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold text-xs sm:text-sm lg:text-base whitespace-nowrap">
               <Link to="/contact">
                 Admissions Open for 2026-2027
               </Link>

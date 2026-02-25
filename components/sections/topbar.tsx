@@ -116,8 +116,8 @@ export default function TopBar() {
                     {/* Dropdown panel — positioned absolutely below the button */}
                     <div
                         ref={dropdownRef}
-                        className="dropdown-animate fixed z-[999] left-3 top-[42px]
-                       !w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden"
+                        className="dropdown-animate fixed z-[999] left-3 right-3 sm:right-auto top-[42px]
+                       sm:max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden"
                         role="dialog"
                         aria-modal="true"
                         aria-labelledby="notice-title"

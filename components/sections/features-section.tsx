@@ -62,7 +62,7 @@ export default function FeaturesSection() {
                 <Zap size={18} className="fill-current" />
                 Our Pillars of Excellence
               </div>
-              <h2 className="font-serif text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
                 Nurturing Minds, <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
                   Enlightening Souls.
@@ -83,12 +83,12 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <ScrollObserver
               key={index}
-              className={`relative md:col-span-6 lg:col-span-${index === 0 || index === 3 ? '7' : '5'} group`}
+              className={`relative md:col-span-6 ${index === 0 || index === 3 ? 'lg:col-span-7' : 'lg:col-span-5'} group`}
             >
               <div
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="relative h-[450px] overflow-hidden rounded-[2.5rem] bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 shadow-xl"
+                className="relative h-[300px] sm:h-[380px] md:h-[450px] overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 shadow-xl"
               >
                 {/* Background Image with Parallax & Darken */}
                 <div className="absolute inset-0">
@@ -101,7 +101,7 @@ export default function FeaturesSection() {
                 </div>
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                <div className="absolute inset-0 p-5 sm:p-8 md:p-12 flex flex-col justify-end">
                   <div className={`mb-4 w-12 h-12 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white shadow-lg transform transition-transform duration-500 ${hoveredIndex === index ? 'rotate-12 scale-110' : ''}`}>
                     {feature.icon}
                   </div>
@@ -110,7 +110,7 @@ export default function FeaturesSection() {
                     {feature.tag}
                   </span>
 
-                  <h3 className="font-serif text-3xl font-bold text-white mb-4">
+                  <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
                     {feature.title}
                   </h3>
 
@@ -140,7 +140,7 @@ export default function FeaturesSection() {
         </div>
 
         {/* Bottom Quick Facts */}
-        <ScrollObserver className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 p-10 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 rounded-[3rem] p-10 md:p-14 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl  text-white">
+        <ScrollObserver className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 p-5 sm:p-8 md:p-10 lg:p-14 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 rounded-2xl sm:rounded-[3rem] text-center shadow-2xl text-white">
           {[
             { label: "SSC Board", sub: "100% Results", icon: <BookMarked /> },
             { label: "Founded", sub: "Since 1970", icon: <Zap /> },

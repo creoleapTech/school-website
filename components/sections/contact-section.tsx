@@ -69,7 +69,7 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-24 bg-white overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-24 bg-white overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -105,7 +105,7 @@ export default function ContactSection() {
             <span>Get Connected</span>
             <Sparkles size={12} />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             <span className="relative">
               <span className="relative z-10">Let's Start</span>
               <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-md"></span>
@@ -144,7 +144,7 @@ export default function ContactSection() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold text-gray-900 mb-1">{info.title}</h3>
-                        <p className="text-gray-900 font-semibold text-lg mb-2">{info.content}</p>
+                        <p className="text-gray-900 font-semibold text-base sm:text-lg mb-2 break-words">{info.content}</p>
                         <p className="text-sm text-gray-500">{info.description}</p>
                       </div>
                     </div>
@@ -184,7 +184,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="p-8">
+              <form onSubmit={handleSubmit} className="p-4 sm:p-6 md:p-8">
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div
@@ -404,7 +404,7 @@ export default function ContactSection() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-[2.5rem] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="bg-white rounded-[2rem] p-3 md:p-5 border border-gray-100 shadow-2xl relative z-10">
-                <div className="w-full h-[400px] md:h-[500px] overflow-hidden rounded-2xl relative border border-gray-100">
+                <div className="w-full h-[280px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-2xl relative border border-gray-100">
                   <MapComponent
                     position={[19.1666893, 72.9472618]}
                     googleMapsUrl="https://www.google.com/maps/place/St.+Pius+X+High+School,+Mulund/@19.1666893,72.9472618,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b8f5e593f299:0xc96059fd45df2518!8m2!3d19.1666893!4d72.9472618!16s%2Fm%2F010fb5x7!17m2!4m1!1e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxNy4wIKXMDSoASAFQAw%3D%3D"

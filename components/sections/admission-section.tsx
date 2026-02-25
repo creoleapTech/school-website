@@ -45,7 +45,7 @@ export default function AdmissionSection() {
             <Sparkles size={14} />
             Empowering Our Students
           </div>
-          <h2 className="font-serif text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
             Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">St. Pius X?</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ export default function AdmissionSection() {
         </div>
 
         {/* Admission CTA Section */}
-        <ScrollObserver className="mt-20 relative overflow-hidden rounded-[3rem] bg-slate-900 dark:bg-blue-950 p-8 md:p-16 text-center md:text-left shadow-2xl">
+        <ScrollObserver className="mt-20 relative overflow-hidden rounded-2xl sm:rounded-[3rem] bg-slate-900 dark:bg-blue-950 p-5 sm:p-8 md:p-16 text-center md:text-left shadow-2xl">
           {/* Animated Background for CTA */}
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-600/20 to-transparent"></div>
           <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-cyan-500/10 rounded-full blur-[80px]"></div>

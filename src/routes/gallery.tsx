@@ -157,7 +157,7 @@ function GalleryPage() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-5">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-5">
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent">
                 School Gallery
@@ -165,7 +165,7 @@ function GalleryPage() {
               <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-cyan-400/30 to-blue-400/30 blur-xl animate-pulse" />
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-blue-200/90 max-w-4xl mx-auto font-light relative">
+          <p className="text-base sm:text-xl md:text-2xl text-blue-200/90 max-w-4xl mx-auto font-light relative">
             Capturing every smile, achievement, celebration and cherished moment at<br />
             <span className="font-semibold text-cyan-300 ml-2">St. Pius X High School</span>
           </p>
@@ -256,20 +256,20 @@ function GalleryPage() {
 
           <button
             onClick={handlePrev}
-            className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-[60] p-2 md:p-4"
+            className="absolute left-1 sm:left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-[60] p-1 sm:p-2 md:p-4"
           >
-            <ChevronLeft size={48} />
+            <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-[60] p-2 md:p-4"
+            className="absolute right-1 sm:right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-[60] p-1 sm:p-2 md:p-4"
           >
-            <ChevronRight size={48} />
+            <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
           </button>
 
           <div
-            className="relative w-full max-w-5xl max-h-[75vh] flex flex-col items-center px-12 md:px-24"
+            className="relative w-full max-w-5xl max-h-[75vh] flex flex-col items-center px-4 sm:px-12 md:px-24"
             onClick={(e) => e.stopPropagation()}
           >
             <img
@@ -279,7 +279,7 @@ function GalleryPage() {
             />
 
             <div className="text-white text-center mt-6 max-w-2xl">
-              <h3 className="text-2xl font-bold mb-2">{filteredItems[selectedIndex].title}</h3>
+              <h3 className="text-lg sm:text-2xl font-bold mb-2">{filteredItems[selectedIndex].title}</h3>
               <p className="text-gray-300">{filteredItems[selectedIndex].description}</p>
             </div>
           </div>
@@ -294,7 +294,7 @@ function GalleryPage() {
                 <button
                   key={item.id}
                   onClick={() => setSelectedIndex(idx)}
-                  className={`relative flex-shrink-0 h-16 w-24 snap-center rounded overflow-hidden transition-all duration-300 ${idx === selectedIndex ? "ring-2 ring-blue-500 scale-100 opacity-100" : "opacity-40 hover:opacity-100 scale-95"
+                  className={`relative flex-shrink-0 h-12 w-16 sm:h-16 sm:w-24 snap-center rounded overflow-hidden transition-all duration-300 ${idx === selectedIndex ? "ring-2 ring-blue-500 scale-100 opacity-100" : "opacity-40 hover:opacity-100 scale-95"
                     }`}
                 >
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover" />

@@ -121,8 +121,8 @@ const About: React.FC = () => {
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+        <div className="absolute top-0 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] bg-cyan-500/5 rounded-full blur-[120px] animate-pulse delay-1000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -132,7 +132,7 @@ const About: React.FC = () => {
             <SchoolIcon className="w-4 h-4" />
             Established 1970
           </div>
-          <h1 className="text-5xl  md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
             Welcome to<br />
             <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400">
               St. Pius X High School
