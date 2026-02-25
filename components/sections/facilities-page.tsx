@@ -114,12 +114,12 @@ export default function FacilitiesPage() {
     ];
 
     const campusHighlights = [
-        { icon: <MapPin className="w-5 h-5" />, title: "Prime Location", description: "Centrally located with excellent connectivity" },
-        { icon: <Shield className="w-5 h-5" />, title: "Safe & Secure", description: "24/7 CCTV surveillance and secure campus" },
-        { icon: <Wifi className="w-5 h-5" />, title: "Wi-Fi Enabled", description: "High-speed internet across the campus" },
-        { icon: <TreePine className="w-5 h-5" />, title: "Green Campus", description: "Eco-friendly with gardens and open spaces" },
-        { icon: <HeartPulse className="w-5 h-5" />, title: "Health Centre", description: "On-campus medical facilities and first aid" },
-        { icon: <Church className="w-5 h-5" />, title: "Chapel", description: "Serene space for prayer and reflection" },
+        { icon: <MapPin className="w-6 h-6" />, title: "Prime Location", description: "Centrally located with excellent connectivity" },
+        { icon: <Shield className="w-6 h-6" />, title: "Safe & Secure", description: "24/7 CCTV surveillance and secure campus" },
+        { icon: <Wifi className="w-6 h-6" />, title: "Wi-Fi Enabled", description: "High-speed internet across the campus" },
+        { icon: <TreePine className="w-6 h-6" />, title: "Green Campus", description: "Eco-friendly with gardens and open spaces" },
+        { icon: <HeartPulse className="w-6 h-6" />, title: "Health Centre", description: "On-campus medical facilities and first aid" },
+        { icon: <Church className="w-6 h-6" />, title: "Chapel", description: "Serene space for prayer and reflection" },
     ];
 
     return (
@@ -189,12 +189,12 @@ export default function FacilitiesPage() {
             <section className="relative -mt-10 z-20 px-4 sm:px-6 lg:px-8">
                 <ScrollObserver className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 p-5 sm:p-8 md:p-10 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 rounded-2xl sm:rounded-[2.5rem] shadow-2xl text-white">
                     {campusHighlights.map((item, i) => (
-                        <div key={i} className="flex flex-col items-center text-center gap-1.5">
-                            <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-1">
+                        <div key={i} className="flex flex-col items-center text-center gap-1">
+                            <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-2">
                                 {item.icon}
                             </div>
                             <div className="font-bold text-sm">{item.title}</div>
-                            <div className="text-blue-200 text-[11px] leading-snug">{item.description}</div>
+                            <div className="text-blue-200 text-xs">{item.description}</div>
                         </div>
                     ))}
                 </ScrollObserver>
