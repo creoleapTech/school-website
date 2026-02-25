@@ -22,8 +22,8 @@ export default function Navigation() {
     { label: "Home", to: "/" },
     { label: "About", to: "/about", hasSubmenu: true },
     { label: "Admissions", to: "https://creativesaints.com/st-pius-x-high-school/login", isExternal: true, },
-    { label: "Academics", to: "/" },
-    { label: "Facilities", to: "/" },
+    { label: "Academics", to: "/academics" },
+    { label: "Facilities", to: "/facilities" },
     { label: "Gallery", to: "/gallery" },
     { label: "Contact", to: "/contact" },
   ]
