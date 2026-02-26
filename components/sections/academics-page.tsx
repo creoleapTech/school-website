@@ -29,6 +29,7 @@ import { Link } from '@tanstack/react-router';
 
 export default function AcademicsPage() {
     const [activeSubject, setActiveSubject] = useState<number>(0);
+    const [activeBoard, setActiveBoard] = useState<'sslc' | 'hsc'>('sslc');
 
     const subjects = [
         {
@@ -133,6 +134,24 @@ export default function AcademicsPage() {
             description: "Regular evaluations, diagnostic tests, and remedial classes to track progress and address learning gaps proactively.",
             icon: <CheckCircle2 className="w-6 h-6" />,
         },
+    ];
+
+    const sslcToppers = [
+        { name: "Arjun Sharma", marks: 489, image: "/st_pius/toppers/sslc_1.jpg" },
+        { name: "Priya Nair", marks: 482, image: "/st_pius/toppers/sslc_2.jpg" },
+        { name: "Rohan Deshmukh", marks: 478, image: "/st_pius/toppers/sslc_3.jpg" },
+        { name: "Sneha Kulkarni", marks: 475, image: "/st_pius/toppers/sslc_4.jpg" },
+        { name: "Aditya Patil", marks: 471, image: "/st_pius/toppers/sslc_5.jpg" },
+        { name: "Meera Joshi", marks: 468, image: "/st_pius/toppers/sslc_6.jpg" },
+    ];
+
+    const hscToppers = [
+        { name: "Kavitha Menon", marks: 584, image: "/st_pius/toppers/hsc_1.jpg" },
+        { name: "Rahul Iyer", marks: 576, image: "/st_pius/toppers/hsc_2.jpg" },
+        { name: "Ananya Reddy", marks: 571, image: "/st_pius/toppers/hsc_3.jpg" },
+        { name: "Vikram Singh", marks: 568, image: "/st_pius/toppers/hsc_4.jpg" },
+        { name: "Divya Pillai", marks: 562, image: "/st_pius/toppers/hsc_5.jpg" },
+        { name: "Siddharth Das", marks: 558, image: "/st_pius/toppers/hsc_6.jpg" },
     ];
 
     return (
@@ -389,6 +408,130 @@ export default function AcademicsPage() {
                                 </div>
                             </ScrollObserver>
                         ))}
+                    </div>
+                </section>
+
+                {/* ===== BOARD EXAM TOPPERS ===== */}
+                <section className="pb-24 md:pb-32">
+                    <ScrollObserver className="text-center mb-20">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+                            <Trophy size={14} />
+                            Our Pride
+                        </div>
+                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+                            Board Exam <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">Toppers</span>
+                        </h2>
+                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                            Celebrating the outstanding achievers of the 2025–2026 academic year who made St. Pius X proud.
+                        </p>
+                    </ScrollObserver>
+
+                    {/* Toggle Tabs */}
+                    <div className="flex justify-center mb-12">
+                        <div className="inline-flex bg-slate-100 dark:bg-slate-800 rounded-full p-1 gap-1">
+                            <button
+                                onClick={() => setActiveBoard('sslc')}
+                                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${activeBoard === 'sslc'
+                                    ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/25'
+                                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                                    }`}
+                            >
+                                SSLC Toppers
+                            </button>
+                            <button
+                                onClick={() => setActiveBoard('hsc')}
+                                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${activeBoard === 'hsc'
+                                    ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/25'
+                                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                                    }`}
+                            >
+                                HSC Toppers
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Max Marks Info */}
+                    <div className="text-center mb-8">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-sm font-semibold">
+                            <Star size={14} className="fill-current" />
+                            {activeBoard === 'sslc' ? 'Maximum Marks: 500' : 'Maximum Marks: 600'}
+                        </span>
+                    </div>
+
+                    {/* Toppers Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {(activeBoard === 'sslc' ? sslcToppers : hscToppers).map((topper, index) => {
+                            const maxMarks = activeBoard === 'sslc' ? 500 : 600;
+                            const percentage = ((topper.marks / maxMarks) * 100).toFixed(1);
+                            const barWidth = (topper.marks / maxMarks) * 100;
+                            const rankColors = [
+                                'from-yellow-400 to-amber-500 shadow-amber-500/30',
+                                'from-slate-300 to-slate-400 shadow-slate-400/30',
+                                'from-amber-600 to-amber-700 shadow-amber-700/30'
+                            ];
+                            return (
+                                <ScrollObserver key={index}>
+                                    <div className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2">
+                                        {/* Top gradient accent */}
+                                        <div className={`h-24 sm:h-28 bg-gradient-to-br ${index % 3 === 0 ? 'from-blue-600 via-blue-700 to-indigo-800' : index % 3 === 1 ? 'from-indigo-600 via-indigo-700 to-blue-800' : 'from-cyan-600 via-blue-600 to-indigo-700'} relative`}>
+                                            {/* Decorative circles */}
+                                            <div className="absolute top-3 right-3 w-16 h-16 rounded-full bg-white/5" />
+                                            <div className="absolute -bottom-2 left-6 w-10 h-10 rounded-full bg-white/5" />
+
+                                            {/* Rank badge for top 3 */}
+                                            {index < 3 && (
+                                                <div className={`absolute top-3 sm:top-4 right-3 sm:right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r ${rankColors[index]} text-white text-xs font-black shadow-lg`}>
+                                                    <Trophy size={12} className="fill-current" />
+                                                    Rank #{index + 1}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Avatar - overlapping the gradient */}
+                                        <div className="flex justify-center -mt-14 sm:-mt-16 relative z-10 mb-4">
+                                            <div className="p-1 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-cyan-500 shadow-xl">
+                                                <div className={`w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white dark:border-slate-900 bg-gradient-to-br ${index % 3 === 0 ? 'from-blue-700 to-indigo-900' : index % 3 === 1 ? 'from-indigo-700 to-blue-900' : 'from-cyan-700 to-blue-900'} flex items-center justify-center text-white text-2xl sm:text-3xl font-bold tracking-wide`}>
+                                                    {topper.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="px-6 pb-6 sm:px-8 sm:pb-8 text-center">
+                                            <h4 className="font-bold text-lg sm:text-xl text-slate-900 dark:text-white mb-1">{topper.name}</h4>
+                                            <p className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider mb-5">
+                                                {activeBoard === 'sslc' ? 'SSLC' : 'HSC'} • Academic Year 2025-26
+                                            </p>
+
+                                            {/* Score display */}
+                                            <div className="flex items-center justify-center gap-3 mb-5">
+                                                <div className="text-center">
+                                                    <div className="text-3xl sm:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+                                                        {topper.marks}
+                                                    </div>
+                                                    <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">out of {maxMarks}</div>
+                                                </div>
+                                                <div className="w-px h-10 bg-slate-200 dark:bg-slate-700" />
+                                                <div className="text-center">
+                                                    <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                                                        {percentage}<span className="text-lg">%</span>
+                                                    </div>
+                                                    <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Percentage</div>
+                                                </div>
+                                            </div>
+
+                                            {/* Progress bar */}
+                                            <div className="w-full h-2.5 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                                                <div
+                                                    className="h-full rounded-full bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 transition-all duration-1000"
+                                                    style={{ width: `${barWidth}%` }}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ScrollObserver>
+                            );
+                        })}
                     </div>
                 </section>
 
