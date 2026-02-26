@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Calendar, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react"
 
 const galleryItems = [
@@ -108,6 +108,8 @@ const categories = [
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [showFloatingBar, setShowFloatingBar] = useState(false)
+  const filterRef = useRef<HTMLDivElement>(null)
 
   const filteredItems =
     activeCategory === "all"
@@ -140,8 +142,51 @@ export default function GalleryPage() {
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [selectedIndex, filteredItems.length])
 
+  // IntersectionObserver to detect when filter tabs scroll out of view
+  useEffect(() => {
+    const node = filterRef.current
+    if (!node) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowFloatingBar(!entry.isIntersecting)
+      },
+      { threshold: 0, rootMargin: "-80px 0px 0px 0px" }
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="min-h-screen bg-gray-50/70 relative">
+      {/* Glassmorphism Floating Filter Bar */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ease-out ${showFloatingBar
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0 pointer-events-none"
+          }`}
+      >
+        <div className="w-full bg-white/60 backdrop-blur-xl border-b border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    setActiveCategory(cat.id)
+                    setSelectedIndex(null)
+                  }}
+                  className={`shrink-0 snap-center whitespace-nowrap px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${activeCategory === cat.id
+                      ? "bg-indigo-700 text-white shadow-md shadow-indigo-500/25 scale-105"
+                      : "bg-white/50 text-gray-700 hover:bg-white/80 hover:text-indigo-700 border border-gray-200/50"
+                    }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
       <section className="relative bg-gradient-to-br from-blue-950 via-indigo-950 to-blue-900 text-white py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96">
@@ -171,7 +216,7 @@ export default function GalleryPage() {
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           {/* Category Filters */}
-          <div className="flex justify-center mb-12 md:mb-16 w-full px-2 sm:px-0">
+          <div ref={filterRef} className="flex justify-center mb-12 md:mb-16 w-full px-2 sm:px-0">
             <div className="flex flex-wrap justify-center gap-2 md:gap-3 p-1.5 sm:p-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-[2rem] shadow-lg border border-slate-200/50 w-full max-w-fit">
               {categories.map((cat) => (
                 <button
@@ -181,8 +226,8 @@ export default function GalleryPage() {
                     setSelectedIndex(null)
                   }}
                   className={`shrink-0 whitespace-nowrap px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeCategory === cat.id
-                      ? "bg-indigo-700 text-white shadow-md scale-105"
-                      : "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-indigo-700"
+                    ? "bg-indigo-700 text-white shadow-md scale-105"
+                    : "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-indigo-700"
                     }`}
                 >
                   {cat.label}

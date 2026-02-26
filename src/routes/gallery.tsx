@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useEffect, useState } from "react"
-import { Calendar, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { Calendar, MapPin, X, ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react"
 
 export const Route = createFileRoute('/gallery')({
   component: GalleryPage,
@@ -113,6 +113,20 @@ const categories = [
 function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [showFloatingBar, setShowFloatingBar] = useState(false)
+  const [sidebarPage, setSidebarPage] = useState(0)
+  const [mobilePage, setMobilePage] = useState(0)
+  const [navHeight, setNavHeight] = useState(100)
+  const filterRef = useRef<HTMLDivElement>(null)
+  const origFilterScrollRef = useRef<HTMLDivElement>(null)
+
+  const ITEMS_PER_PAGE = 6
+  const MOBILE_PER_PAGE = 3
+  const totalSidebarPages = Math.ceil(categories.length / ITEMS_PER_PAGE)
+  const visibleCategories = categories.slice(sidebarPage * ITEMS_PER_PAGE, (sidebarPage + 1) * ITEMS_PER_PAGE)
+  const activeCatIndex = categories.findIndex(c => c.id === activeCategory)
+  const mobileTotalPages = Math.ceil(categories.length / MOBILE_PER_PAGE)
+  const mobileVisibleCats = categories.slice(mobilePage * MOBILE_PER_PAGE, (mobilePage + 1) * MOBILE_PER_PAGE)
 
   const filteredItems =
     activeCategory === "all"
@@ -145,8 +159,146 @@ function GalleryPage() {
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [selectedIndex, filteredItems.length])
 
+  // IntersectionObserver to detect when filter tabs scroll out of view
+  useEffect(() => {
+    const node = filterRef.current
+    if (!node) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowFloatingBar(!entry.isIntersecting)
+      },
+      { threshold: 0, rootMargin: "-80px 0px 0px 0px" }
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
+  // Measure nav height for mobile floating bar positioning
+  useEffect(() => {
+    const measureNav = () => {
+      const nav = document.querySelector('nav')
+      if (nav) setNavHeight(nav.getBoundingClientRect().height)
+    }
+    measureNav()
+    window.addEventListener('resize', measureNav)
+    return () => window.removeEventListener('resize', measureNav)
+  }, [])
+
   return (
     <div className="min-h-screen bg-gray-50/70 relative">
+      {/* ═══ Desktop: Vertical Side Panel (lg+) ═══ */}
+      <div
+        className={`fixed right-4 xl:right-8 top-1/2 -translate-y-1/2 z-[51] hidden lg:flex flex-col items-center gap-2 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${showFloatingBar
+          ? "translate-x-0 opacity-100"
+          : "translate-x-[calc(100%+2rem)] opacity-0 pointer-events-none"
+          }`}
+      >
+        {/* Up arrow */}
+        <button
+          onClick={() => setSidebarPage(p => Math.max(0, p - 1))}
+          disabled={sidebarPage === 0}
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-xl border border-gray-200/80 shadow-lg text-gray-400 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-white/90 disabled:hover:text-gray-400"
+        >
+          <ChevronUp size={18} />
+        </button>
+
+        {/* Category pills - vertical */}
+        <div className="flex flex-col gap-1.5 bg-white/80 backdrop-blur-2xl rounded-2xl p-2 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-200/60">
+          <div className="h-[2px] rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 mx-1 mb-1" />
+          {visibleCategories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => {
+                setActiveCategory(cat.id)
+                setSelectedIndex(null)
+              }}
+              className={`w-full text-left px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${activeCategory === cat.id
+                ? "bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-[0_2px_12px_rgba(79,70,229,0.35)]"
+                : "text-gray-600 hover:bg-indigo-50 hover:text-indigo-700"
+                }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+          <div className="text-[10px] text-gray-400 text-center font-medium mt-0.5">
+            {sidebarPage + 1} / {totalSidebarPages}
+          </div>
+        </div>
+
+        {/* Down arrow */}
+        <button
+          onClick={() => setSidebarPage(p => Math.min(totalSidebarPages - 1, p + 1))}
+          disabled={sidebarPage >= totalSidebarPages - 1}
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-xl border border-gray-200/80 shadow-lg text-gray-400 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-white/90 disabled:hover:text-gray-400"
+        >
+          <ChevronDown size={18} />
+        </button>
+      </div>
+
+      {/* ═══ Mobile: Top Floating Bar (<lg) ═══ */}
+      <div
+        className={`fixed left-0 right-0 z-[51] lg:hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${showFloatingBar
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-[calc(100%+8px)] opacity-0 pointer-events-none"
+          }`}
+        style={{ top: `${navHeight}px` }}
+      >
+        <div className="h-[2px] bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" />
+        <div className="bg-white/90 backdrop-blur-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)]">
+          <div className="flex items-center gap-1 px-2 py-2">
+            {/* Prev page arrow */}
+            <button
+              onClick={() => setMobilePage(p => Math.max(0, p - 1))}
+              disabled={mobilePage === 0}
+              className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all duration-200 disabled:opacity-25 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            {/* Visible category pills */}
+            <div className="flex items-center gap-1.5 flex-1 min-w-0 justify-center">
+              {mobileVisibleCats.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    setActiveCategory(cat.id)
+                    setSelectedIndex(null)
+                  }}
+                  className={`flex-1 min-w-0 truncate px-3 py-2 rounded-full text-xs font-semibold transition-all duration-300 text-center ${activeCategory === cat.id
+                    ? "bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-[0_2px_12px_rgba(79,70,229,0.35)]"
+                    : "bg-gray-100 text-gray-600 hover:bg-indigo-50 hover:text-indigo-700"
+                    }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Next page arrow */}
+            <button
+              onClick={() => setMobilePage(p => Math.min(mobileTotalPages - 1, p + 1))}
+              disabled={mobilePage >= mobileTotalPages - 1}
+              className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all duration-200 disabled:opacity-25 disabled:cursor-not-allowed"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+
+          {/* Page dots */}
+          <div className="flex justify-center gap-1 pb-2">
+            {Array.from({ length: mobileTotalPages }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setMobilePage(i)}
+                className={`rounded-full transition-all duration-300 ${i === mobilePage
+                  ? "w-5 h-1.5 bg-indigo-500"
+                  : "w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400"
+                  }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
       <section className="relative bg-gradient-to-br from-blue-950 via-indigo-950 to-blue-900 text-white py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96">
@@ -176,8 +328,22 @@ function GalleryPage() {
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           {/* Category Filters */}
-          <div className="flex justify-center mb-12 md:mb-16 w-full px-2 sm:px-0">
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3 p-1.5 sm:p-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-[2rem] shadow-lg border border-slate-200/50 w-full max-w-fit">
+          <div ref={filterRef} className="flex items-center justify-center gap-2 mb-12 md:mb-16 w-full px-2 sm:px-0">
+            {/* Left arrow */}
+            <button
+              onClick={() => {
+                const el = origFilterScrollRef.current
+                if (el) el.scrollBy({ left: -200, behavior: 'smooth' })
+              }}
+              className="shrink-0 w-9 h-9 hidden sm:flex items-center justify-center rounded-full bg-white shadow-md border border-gray-200 text-gray-400 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50 transition-all duration-200"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            <div
+              ref={origFilterScrollRef}
+              className="flex gap-2 md:gap-3 p-1.5 sm:p-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-[2rem] shadow-lg border border-slate-200/50 overflow-x-auto scrollbar-hide"
+            >
               {categories.map((cat) => (
                 <button
                   key={cat.id}
@@ -186,14 +352,25 @@ function GalleryPage() {
                     setSelectedIndex(null)
                   }}
                   className={`shrink-0 whitespace-nowrap px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeCategory === cat.id
-                      ? "bg-indigo-700 text-white shadow-md scale-105"
-                      : "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-indigo-700"
+                    ? "bg-indigo-700 text-white shadow-md scale-105"
+                    : "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-indigo-700"
                     }`}
                 >
                   {cat.label}
                 </button>
               ))}
             </div>
+
+            {/* Right arrow */}
+            <button
+              onClick={() => {
+                const el = origFilterScrollRef.current
+                if (el) el.scrollBy({ left: 200, behavior: 'smooth' })
+              }}
+              className="shrink-0 w-9 h-9 hidden sm:flex items-center justify-center rounded-full bg-white shadow-md border border-gray-200 text-gray-400 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50 transition-all duration-200"
+            >
+              <ChevronRight size={18} />
+            </button>
           </div>
 
           {/* Gallery Uniform Grid */}
