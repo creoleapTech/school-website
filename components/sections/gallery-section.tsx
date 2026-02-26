@@ -171,22 +171,24 @@ export default function GalleryPage() {
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 md:mb-16">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => {
-                  setActiveCategory(cat.id)
-                  setSelectedIndex(null)
-                }}
-                className={`px-6 py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeCategory === cat.id
-                  ? "bg-indigo-700 text-white shadow-lg shadow-indigo-700/30 scale-105"
-                  : "bg-white text-gray-700 border border-gray-200 hover:border-indigo-400 hover:text-indigo-700"
-                  }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+          <div className="flex justify-center mb-12 md:mb-16 w-full px-2 sm:px-0">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 p-1.5 sm:p-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-[2rem] shadow-lg border border-slate-200/50 w-full max-w-fit">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    setActiveCategory(cat.id)
+                    setSelectedIndex(null)
+                  }}
+                  className={`shrink-0 whitespace-nowrap px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeCategory === cat.id
+                      ? "bg-indigo-700 text-white shadow-md scale-105"
+                      : "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-indigo-700"
+                    }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Gallery Uniform Grid */}
