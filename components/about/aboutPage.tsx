@@ -248,7 +248,7 @@ const AboutPage: React.FC = () => {
             " LIGHTED TO ENLIGHTEN "
           </p>
           <p className="text-lg font-serif md:text-xl font-medium text-slate-700 dark:text-slate-300 mb-10">
-            St. Pius X School is a Christian School administered by the Roman Catholic Archdiocese of Mumbai. The School is under the religious jurisdiction of the Roman Catholic Archbishop of Mumbai. The primary purpose of the School is to provide Catholic Education for Catholic boys. However, pupils of other faiths are also admitted and their religious feelings and freedom of conscience are duly respected without sacrificing the Christian character of the Institution.
+            St. Pius X High School is a Christian School administered by the Roman Catholic Archdiocese of Mumbai. The School is under the religious jurisdiction of the Roman Catholic Archbishop of Mumbai. The primary purpose of the School is to provide Catholic Education for Catholic boys. However, pupils of other faiths are also admitted and their religious feelings and freedom of conscience are duly respected without sacrificing the Christian character of the Institution.
 
           </p>
           {/* VISION & MISSION - ENHANCED ANIMATIONS */}
@@ -560,7 +560,7 @@ const AboutPage: React.FC = () => {
                     {/* Highlighted Quote */}
                     <div className="my-8 p-6 bg-gradient-to-r from-blue-50 to-amber-50 rounded-2xl border-l-4 border-blue-600">
                       <p className="text-xl font-serif italic text-gray-800 leading-relaxed">
-                        "Education is not the filling of a vessel, but the kindling of a flame. At St. Pius X, we ignite the flame of
+                        "Education is not the filling of a vessel, but the kindling of a flame. At St. Pius X High School, we ignite the flame of
                         curiosity, passion, and purpose in every student."
                       </p>
                     </div>

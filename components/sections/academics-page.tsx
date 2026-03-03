@@ -211,7 +211,7 @@ export default function AcademicsPage() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
                         >
-                            At St. Pius X, we deliver a rigorous SSC Board curriculum enriched with co-curricular
+                            At St. Pius X High School, we deliver a rigorous SSC Board curriculum enriched with co-curricular
                             programmes, modern pedagogy, and value-based education to prepare students for global success.
                         </motion.p>
                     </div>

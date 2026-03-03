@@ -80,7 +80,7 @@ export default function HeroSection() {
 
           {/* ── English Subheading ── */}
           <p className="text-base sm:text-xl md:text-2xl mb-4 font-light max-w-2xl mx-auto text-gray-100">
-            Join St. Pius X School for world-class education, holistic development, and character building
+            Join St. Pius X High School for world-class education, holistic development, and character building
           </p>
 
           {/* ── Marathi Affiliation Line ── */}

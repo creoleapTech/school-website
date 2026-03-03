@@ -46,7 +46,7 @@ export default function AdmissionSection() {
             Empowering Our Students
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-            Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">St. Pius X?</span>
+            Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">St. Pius X High School?</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             We provide a nurturing environment where academic rigor meets creative freedom, ensuring every student finds their unique path to success.
