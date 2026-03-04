@@ -119,7 +119,7 @@ const AboutPage: React.FC = () => {
       name: "Science & Innovation Labs",
       description: "State-of-the-art laboratories equipped with modern technology for physics, chemistry, biology, and robotics. Features include 3D printers and VR learning stations.",
       icon: <Brain className="w-6 h-6" />,
-      image: "/st_pius/science.JPG",
+      image: "/st_pius/IMG_8389.JPG",
       clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%)"
     },
     {
@@ -481,32 +481,28 @@ const AboutPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Decorative Line */}
-                    <div className="mt-6 pt-6 border-t border-gray-100">
+                    {/* Decorative Line & Legacy Badge */}
+                    <div className="mt-6 pt-6 border-t border-gray-100 space-y-4">
                       <div className="flex items-center justify-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-500" />
                         <div className="w-2 h-2 rounded-full bg-amber-500" />
                         <div className="w-2 h-2 rounded-full bg-blue-500" />
                       </div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ delay: 0.4, type: "spring", stiffness: 260, damping: 18 }}
+                        className="flex justify-end"
+                      >
+                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg shadow-orange-500/25 border-2 border-white/80">
+                          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                          <span className="text-xs sm:text-sm font-extrabold tracking-wide whitespace-nowrap">25+ Years Legacy</span>
+                        </div>
+                      </motion.div>
                     </div>
                   </div>
-
-                  {/* Floating Quote Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3, type: "spring" }}
-                    className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-2xl border-2 sm:border-4 border-white"
-                  >
-                    <div className="flex items-center gap-1.5 sm:gap-2">
-                      <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
-                      <div className="text-white">
-                        <div className="text-lg sm:text-2xl font-black">25+</div>
-                        <div className="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider">Years Legacy</div>
-                      </div>
-                    </div>
-                  </motion.div>
                 </div>
               </motion.div>
 
