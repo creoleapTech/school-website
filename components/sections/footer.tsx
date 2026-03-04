@@ -63,8 +63,8 @@ export default function Footer() {
                 />
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 tracking-tight">St. Pius X High School</span>
               </Link>
-              <p className="mt-5 text-gray-700 leading-relaxed text-lg">
-                Excellence in Education • Character Building • Holistic Development since 1975
+              <p className="mt-5 text-gray-700 leading-relaxed text-base">
+                St. Pius X High School has been dedicated to Excellence in Education, Character Building, and Holistic Development since 1975. Our mission is to be a catalyst in unlocking every student's potential and fostering their intellectual, creative, and spiritual capabilities to prepare them to succeed in a challenging world of tomorrow.
               </p>
             </div>
 

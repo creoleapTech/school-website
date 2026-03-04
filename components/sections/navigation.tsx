@@ -81,6 +81,7 @@ export default function Navigation() {
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
                       className="px-3 py-2 rounded-md text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors"
+                      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                     >
                       {item.label}
                     </Link>
@@ -146,7 +147,10 @@ export default function Navigation() {
                     <Link
                       to={item.to as any}
                       className="block px-3 py-2 rounded-md text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        setIsOpen(false);
+                      }}
                     >
                       {item.label}
                     </Link>
