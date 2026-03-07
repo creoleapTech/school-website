@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from "react"
 import { ChevronDown } from "lucide-react"
+import { Link } from "@tanstack/react-router"
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -92,12 +93,20 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover-lift shadow-lg text-sm sm:text-base">
-            <a href="/#contact">Apply for Admission</a>
-          </button>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors text-sm sm:text-base">
-            <a href="/about">Learn More</a>
-          </button>
+          <Link
+            to="/"
+            hash="contact"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover-lift shadow-lg text-sm sm:text-base inline-block text-center"
+          >
+            Apply for Admission
+          </Link>
+          <Link
+            to="/about"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors text-sm sm:text-base inline-block text-center"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Learn More
+          </Link>
         </div>
       </div>
 

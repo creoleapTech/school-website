@@ -23,6 +23,9 @@ import {
   CheckCircle2
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Link } from "@tanstack/react-router"
+
+const MotionLink = motion(Link)
 
 export default function TestimonialSection() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -541,15 +544,17 @@ export default function TestimonialSection() {
             </div>
 
             <div className="relative z-10">
-              <motion.button
+              <MotionLink
+                to="/contact"
                 whileHover={{ scale: 1.05, rotate: 1 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-white to-blue-50 text-blue-900 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all text-lg group relative overflow-hidden"
+                className="px-10 py-5 bg-gradient-to-r from-white to-blue-50 text-blue-900 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all text-lg group relative overflow-hidden inline-block text-center"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 <span className="relative z-10">Enquire for Admission</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </motion.button>
+              </MotionLink>
             </div>
           </div>
         </motion.div>

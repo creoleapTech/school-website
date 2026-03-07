@@ -2,6 +2,7 @@
 import React from 'react'
 import { ScrollObserver } from "@/components/ui/scroll-observer"
 import { CheckCircle, Users, BookOpen, Award, ArrowRight, Sparkles } from "lucide-react"
+import { Link } from "@tanstack/react-router"
 
 export default function AdmissionSection() {
   const admissionReasons = [
@@ -98,9 +99,13 @@ export default function AdmissionSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <button className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
-                <a href="/#form">Apply Now</a>
-              </button>
+              <Link
+                to="/contact"
+                className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 inline-block text-center"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                Apply Now
+              </Link>
             </div>
           </div>
         </ScrollObserver>

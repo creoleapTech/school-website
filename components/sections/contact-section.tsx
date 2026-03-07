@@ -393,12 +393,6 @@ export default function ContactSection() {
                   </div>
                 </div>
               </div>
-
-              <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all hover:-translate-y-1 group">
-                <MapPin size={20} />
-                Schedule a Campus Tour
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
             </div>
 
             <div className="relative group">

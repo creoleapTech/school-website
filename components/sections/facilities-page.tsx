@@ -343,11 +343,13 @@ export default function FacilitiesPage() {
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                                <Link to="/contact">
-                                    <button className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 justify-center whitespace-nowrap">
-                                        Schedule a Visit
-                                        <ArrowRight className="w-5 h-5" />
-                                    </button>
+                                <Link
+                                    to="/contact"
+                                    className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 justify-center whitespace-nowrap text-center"
+                                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                                >
+                                    Schedule a Visit
+                                    <ArrowRight className="w-5 h-5" />
                                 </Link>
                             </div>
                         </div>
