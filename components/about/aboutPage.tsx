@@ -833,14 +833,14 @@ const AboutPage: React.FC = () => {
                             </div>
                           </div>
 
-                          <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 group-hover:border-blue-200 group-hover:shadow-lg transition-all duration-300">
-                            <div className="flex items-baseline gap-3 mb-2">
-                              <span className={`text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r ${item.color}`}>
+                          <div className="bg-gray-50 rounded-2xl p-4 sm:p-6 border border-gray-100 group-hover:border-blue-200 group-hover:shadow-lg transition-all duration-300">
+                            <div className="flex items-baseline gap-2 sm:gap-3 mb-2 whitespace-nowrap">
+                              <span className={`text-xl sm:text-2xl font-black flex-shrink-0 text-transparent bg-clip-text bg-gradient-to-r ${item.color}`}>
                                 {item.year}
                               </span>
-                              <h4 className="text-xl font-bold text-gray-900">{item.title}</h4>
+                              <h4 className="text-base sm:text-xl font-bold text-gray-900">{item.title}</h4>
                             </div>
-                            <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{item.desc}</p>
                           </div>
                         </motion.div>
                       ))}
