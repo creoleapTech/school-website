@@ -428,14 +428,16 @@ const AboutPage: React.FC = () => {
         <div ref={statsRef} className={`mb-16 md:mb-32 transition-all duration-1000 ${isVisible[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
             {animatedStats.map((stat, i) => (
-              <div key={stat.id} className="group bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl hover:-translate-y-2 transition-all duration-300">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-600 to-cyan-500' : 'from-cyan-500 to-blue-600'} flex items-center justify-center text-white mb-4 shadow-lg`}>
+              <div key={stat.id} className="group flex flex-row-reverse items-center justify-between sm:block bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-600 to-cyan-500' : 'from-cyan-500 to-blue-600'} flex items-center justify-center text-white mb-0 sm:mb-4 shadow-lg shrink-0`}>
                   {stat.icon}
                 </div>
-                <div className="text-3xl font-bold text-slate-900 dark:text-white">
-                  {stat.number}{stat.suffix}
+                <div>
+                  <div className="text-3xl font-bold text-slate-900 dark:text-white">
+                    {stat.number}{stat.suffix}
+                  </div>
+                  <div className="text-sm font-bold text-blue-600 dark:text-cyan-400 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
-                <div className="text-sm font-bold text-blue-600 dark:text-cyan-400 uppercase tracking-wider mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
